@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Fetch of Backend products" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An example of Frontend talking to Backend Python application serving products. This example provides the ability to react to the product (Good or Bad)." />
-<meta property="og:description" content="An example of Frontend talking to Backend Python application serving products. This example provides the ability to react to the product (Good or Bad)." />
+<meta name="description" content="An example of Frontend talking to Backend Python application serving products. This example provides the ability to react to the product (Haha or Boohoo)." />
+<meta property="og:description" content="An example of Frontend talking to Backend Python application serving products. This example provides the ability to react to the product (Haha or Boohoo)." />
 <link rel="canonical" href="https://aaron-rub.github.io/group_p4t7/data/products" />
 <meta property="og:url" content="https://aaron-rub.github.io/group_p4t7/data/products" />
 <meta property="og:site_name" content="fastpages" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://aaron-rub.github.io/group_p4t7/images/products.png" />
 <meta property="twitter:title" content="Fetch of Backend products" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-10T00:00:00-05:00","datePublished":"2022-07-10T00:00:00-05:00","description":"An example of Frontend talking to Backend Python application serving products. This example provides the ability to react to the product (Good or Bad).","headline":"Fetch of Backend products","image":"https://aaron-rub.github.io/group_p4t7/images/products.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://aaron-rub.github.io/group_p4t7/data/products"},"url":"https://aaron-rub.github.io/group_p4t7/data/products"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-10T00:00:00-05:00","datePublished":"2022-07-10T00:00:00-05:00","description":"An example of Frontend talking to Backend Python application serving products. This example provides the ability to react to the product (Haha or Boohoo).","headline":"Fetch of Backend products","image":"https://aaron-rub.github.io/group_p4t7/images/products.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://aaron-rub.github.io/group_p4t7/data/products"},"url":"https://aaron-rub.github.io/group_p4t7/data/products"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/group_p4t7/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aaron-rub.github.io/group_p4t7/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/group_p4t7/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -77,8 +77,8 @@ window.onload = wrap_img;
   <thead>
   <tr>
     <th>Product</th>
-    <th>Good</th>
-    <th>Bad</th>
+    <th>Haha</th>
+    <th>Boohoo</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -93,13 +93,13 @@ window.onload = wrap_img;
   const resultContainer = document.getElementById("result");
 
   // keys for product reactions
-  const Good = "Good";
-  const Bad = "Bad";
+  const Haha = "Haha";
+  const Boohoo = "Boohoo";
 
   // prepare fetch urls
   const url = "https://white.nighthawkcodescrums.gq/api/jokes";
-  const like_url = url + "/like/";  // Good reaction
-  const jeer_url = url + "/jeer/";  // Bad reaction
+  const like_url = url + "/like/";  // Haha reaction
+  const jeer_url = url + "/jeer/";  // Boohoo reaction
 
   // prepare fetch GET options
   const options = {
@@ -135,32 +135,32 @@ window.onload = wrap_img;
             const product = document.createElement("td");
               product.innerHTML = row.id + ". " + row.product;  // add fetched data to innerHTML
 
-            // td for Good cell with onclick actions
-            const Good = document.createElement("td");
-              const Good_but = document.createElement('button');
-              Good_but.id = Good+row.id   // establishes a Good JS id for cell
-              Good_but.innerHTML = row.Good;  // add fetched "Good count" to innerHTML
-              Good_but.onclick = function () {
+            // td for Haha cell with onclick actions
+            const Haha = document.createElement("td");
+              const Haha_but = document.createElement('button');
+              Haha_but.id = Haha+row.id   // establishes a Haha JS id for cell
+              Haha_but.innerHTML = row.Haha;  // add fetched "Haha count" to innerHTML
+              Haha_but.onclick = function () {
                 // onclick function call with "like parameters"
-                reaction(Good, like_url+row.id, Good_but.id);  
+                reaction(Haha, like_url+row.id, Haha_but.id);  
               };
-              Good.appendChild(Good_but);  // add "Good button" to Good cell
+              Haha.appendChild(Haha_but);  // add "Haha button" to Haha cell
 
-            // td for Bad cell with onclick actions
-            const Bad = document.createElement("td");
-              const Bad_but = document.createElement('button');
-              Bad_but.id = Bad+row.id  // establishes a Bad JS id for cell
-              Bad_but.innerHTML = row.Bad;  // add fetched "Bad count" to innerHTML
-              Bad_but.onclick = function () {
+            // td for Boohoo cell with onclick actions
+            const Boohoo = document.createElement("td");
+              const Boohoo_but = document.createElement('button');
+              Boohoo_but.id = Boohoo+row.id  // establishes a Boohoo JS id for cell
+              Boohoo_but.innerHTML = row.Boohoo;  // add fetched "Boohoo count" to innerHTML
+              Boohoo_but.onclick = function () {
                 // onclick function call with "jeer parameters"
-                reaction(Bad, jeer_url+row.id, Bad_but.id);  
+                reaction(Boohoo, jeer_url+row.id, Boohoo_but.id);  
               };
-              Bad.appendChild(Bad_but);  // add "Bad button" to Bad cell
+              Boohoo.appendChild(Boohoo_but);  // add "Boohoo button" to Boohoo cell
              
             // this builds ALL td's (cells) into tr (row) element
             tr.appendChild(product);
-            tr.appendChild(Good);
-            tr.appendChild(Bad);
+            tr.appendChild(Haha);
+            tr.appendChild(Boohoo);
 
             // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
@@ -188,10 +188,10 @@ window.onload = wrap_img;
       response.json().then(data => {
           console.log(data);
           // Likes or Jeers updated/incremented
-          if (type === Good) // like data element
-            document.getElementById(elemID).innerHTML = data.Good;  // fetched Good data assigned to Good Document Object Model (DOM)
-          else if (type === Bad) // jeer data element
-            document.getElementById(elemID).innerHTML = data.Bad;  // fetched Bad data assigned to Bad Document Object Model (DOM)
+          if (type === Haha) // like data element
+            document.getElementById(elemID).innerHTML = data.Haha;  // fetched Haha data assigned to Haha Document Object Model (DOM)
+          else if (type === Boohoo) // jeer data element
+            document.getElementById(elemID).innerHTML = data.Boohoo;  // fetched Boohoo data assigned to Boohoo Document Object Model (DOM)
           else
             error("unknown type: " + type);  // should never occur
       })
